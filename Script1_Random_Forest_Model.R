@@ -5,7 +5,7 @@ library(randomForest)
 data <- read.csv("olink_dataset.csv")
 
 # Build the random forest model
-rf_model <- randomForest(y ~ ., data = train_data, ntree = 100, mtry = 7, replace = TRUE)
+rf_model <- randomForest(y ~ ., data = data, ntree = 100, mtry = 7, replace = TRUE)
 
 # Calculate the mean decrease accuracy
 mean_decrease_acc <- importance(rf_model, type = 1)
